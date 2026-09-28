@@ -1,0 +1,23 @@
+{
+  "source": "https://tinyeinstein.org/",
+  "observed_on": "2026-09-25",
+  "observed_brand": {
+    "font_family": "Urbanist",
+    "yellow": "#EBC64F",
+    "lime": "#CAD547",
+    "sky": "#9BCBD6",
+    "ink": "#363333",
+    "surface": "#F5F8FA",
+    "pink": "#FEE5E3",
+    "green": "#E2F9DF",
+    "blue": "#DEF3F8"
+  },
+  "proposed_portal": {
+    "muted_text": "#636565",
+    "border": "#E3E7E9",
+    "ready_text": "#36613C",
+    "ready_surface": "#F2FAF0",
+    "focus": "#3B6771",
+    "panel_radius_px": 20
+  }
+}

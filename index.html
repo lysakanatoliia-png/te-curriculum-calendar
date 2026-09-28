@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#EBC64F">
+  <title>Calendar · Tiny Einstein Teacher Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="curriculum-data.js" defer></script>
+  <script src="demo-calendar-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to calendar</a>
+  <header class="app-header">
+    <a class="logo" href="index.html" aria-label="Tiny Einstein Teacher Workspace"><img src="assets/logo.svg" alt="Tiny Einstein Child Development Center" width="176" height="84"></a>
+    <div class="workspace-label"><span>CURRICULUM</span><strong>Teacher workspace</strong></div>
+    <nav aria-label="Workspace"><button class="nav-item active" id="calendar-nav" aria-current="page">Calendar</button><button class="nav-item" id="packet-nav">Weekly packet</button><button class="nav-item" id="curriculum-nav">Annual curriculum</button></nav>
+    <div class="account"><span class="group-pill">Blue group <span>4–5 years</span></span><span class="avatar" aria-label="Lead teacher">LT</span></div>
+  </header>
+  <main id="main">
+    <div class="page-heading"><div><p class="eyebrow">A LITTLE PLANNING. A WORLD OF DISCOVERY.</p><h1 id="page-title">Your teaching calendar</h1><p class="intro">See what’s ahead. Prepare your week. Make room for discovery.</p></div><span class="preview-label">Design preview</span></div>
+    <section class="week-workflow" aria-label="Weekly packet approval">
+      <div class="workflow-copy"><div class="inline"><span class="small-label">SELECTED PACKET</span><span id="week-status" class="status"></span></div><h2 id="week-title"></h2><p id="week-deadline"></p><p id="admin-note" class="admin-note" hidden></p></div>
+      <div class="workflow-controls"><label id="comment-label" hidden>Revision notes<textarea id="comment" placeholder="Describe what the teacher should revise."></textarea></label><div class="actions" id="week-actions"></div><p class="feedback" id="feedback" aria-live="polite"></p></div>
+    </section>
+    <section id="calendar-view" class="calendar-card" aria-label="Monthly calendar">
+      <div class="calendar-heading"><div><h2>September <span>2026</span></h2><p>Monthly theme <span class="unassigned">Not assigned</span></p></div><div class="calendar-hint"><span class="ready-dot"></span>Ready days open your teaching plan</div></div>
+      <p class="mapping-note">September 2026 is an illustrative calendar. Event dates, tour bookings, enrichment times, birthdays and approval states are examples. Weekly themes follow the source curriculum.</p>
+      <p class="exemplar-callout"><strong>New: a complete teaching day.</strong> Open <a href="exemplar-day.html">Tuesday, September 15 · All About Me</a> to see the daily guide, full teaching method, and printable child materials. It is a content prototype, not an approved weekly plan.</p>
+      <div class="calendar-scroll" role="region" aria-label="September calendar, scroll horizontally on smaller screens" tabindex="0">
+        <table><caption class="sr-only">September 2026. Sunday through Saturday, with a theme for each week. Example events and plans.</caption><colgroup><col class="week-column"><col span="7"></colgroup><thead><tr><th scope="col">WEEK &amp; THEME</th><th scope="col">SUN</th><th scope="col">MON</th><th scope="col">TUE</th><th scope="col">WED</th><th scope="col">THU</th><th scope="col">FRI</th><th scope="col">SAT</th></tr></thead><tbody id="calendar-rows"></tbody></table>
+      </div>
+      <section class="birthday-panel" aria-labelledby="birthday-heading"><div><span class="small-label">AT THE END OF THE MONTH</span><h3 id="birthday-heading">Birthdays this month</h3><p>Sample child records for this calendar preview.</p></div><div class="birthday-list" id="birthday-list"></div></section>
+      <div class="unscheduled"><span class="small-label">SOURCE EVENTS · DATES TO CONFIRM</span><p>Actual dates still need confirmation; placements in the calendar above are examples.</p><div id="undated-events" class="day-events"></div></div>
+      <div class="calendar-footer"><div class="legend" aria-label="Event types"><span><i data-kind="holiday"></i>Holiday / closure</span><span><i data-kind="special"></i>Special event</span><span><i data-kind="tour"></i>School tour</span><span><i data-kind="field-trip"></i>Field trip</span><span><i data-kind="birthday"></i>Birthday</span><span><i data-kind="lesson"></i>Enrichment</span><span><i data-kind="team"></i>Classroom / team</span></div><span>Thursday: submit next week’s packet</span></div>
+    </section>
+    <section id="curriculum-view" class="content-page" hidden aria-label="Annual curriculum"><div class="annual-heading"><div><p class="eyebrow">SEPTEMBER THROUGH AUGUST</p><h2>One year of discovery</h2><p class="intro">The source curriculum’s weekly themes and events. Dates and monthly theme titles are still to be assigned.</p></div><label>Explore month<select id="curriculum-month"></select></label></div><div class="annual-layout"><div><h3 id="annual-month"></h3><div id="annual-weeks" class="annual-weeks"></div></div><aside class="annual-events"><h3>Events &amp; preparation</h3><p class="sample-note">Source entries · Dates to confirm</p><ul id="annual-events"></ul></aside></div><div class="preparation"><h3>Learning alongside the weekly theme</h3><p class="intro">Math · Phonics &amp; pre-reading · Shapes · Colors · Logic · Science &amp; sensory · Sports · Art · Craft · Music · Languages</p><p class="sample-note">Each age group needs its own learning goals, instructions, and materials. Weekly sequences for Pink, Green, and Blue are not yet assigned.</p></div></section>
+    <section id="packet-view" class="content-page" hidden aria-label="Weekly packet overview"><div class="detail-top"><p class="eyebrow">YOUR WEEK, AT A GLANCE</p><h2 id="packet-title"></h2><p class="intro">Open a day to review its teaching blocks, instructions, and preparation.</p></div><div id="packet-days" class="packet-days"></div><div class="preparation"><h3>Before the week begins</h3><ul><li>Check each day’s events and prepare the room.</li><li>Prepare the theme picture cards and choose the reading passages.</li><li>Review lead teacher and co-teacher responsibilities.</li><li>Prepare paper, drawing materials, and small-group supplies.</li></ul><p class="sample-note">This preview contains sample scenarios. Picture cards, book selections, and printable child materials still need to be created.</p></div></section>
+    <section id="day-view" class="content-page" hidden aria-label="Daily teaching plan"><button class="text-button" id="back">← Back to calendar</button><div class="detail-top"><div class="inline"><p class="eyebrow" id="day-context"></p><span id="day-status" class="status"></span></div><h2 id="day-title"></h2><p class="intro" id="day-theme"></p></div><div id="day-events" class="day-events"></div><div id="day-blocks"></div></section>
+    <footer class="preview-footer"><p>Source themes · Illustrative event dates, bookings, birthdays, approval states and scenarios · Changes reset when you reload.</p><details class="preview-controls"><summary>Preview controls</summary><label>View as <select id="role"><option value="teacher">Teacher</option><option value="admin">Administrator</option></select></label><p>Approval actions are simulated locally. Nothing is sent to an administrator.</p></details></footer>
+  </main>
+</body>
+</html>
